@@ -76,6 +76,22 @@ function numCriteria() {
     alert("please select an option!")
     return numCriteria ();
 };
+  
+function symbCriteria() {
+  var symbSelect = window.prompt("Shall I add symbols to your new password? (type yes or no)");
+  if (symbSelect === 'yes'){
+    alert("I'll add it in!");
+    newPassword = newPassword.concat(symbols);
+    return newPassword;
+  }
+  if (symbSelect === 'no'){
+    alert("Copy That, Over and Out!");
+    return newPassword;
+  }
+  else {
+    alert("Come on! Its a yes or no question!")
+    return symbCriteria ();
+};
 
 
 
