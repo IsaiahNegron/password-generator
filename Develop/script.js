@@ -44,6 +44,38 @@ function uCaseCriteria() {
     alert("please choose an option!")
     return uCaseCriteria ();
 };
+  
+function lCaseCriteria() {
+  var lowerCase = window.prompt("Would you like uppercase letters in your password? (type yes or no)");
+  if (lowerCase === 'yes'){
+    alert("I'll add it in!");
+    newPassword = newPassword.concat(lower);
+    return newPassword;
+  }
+  if (lowerCase === 'no'){
+    alert("Sure thing!");
+    return newPassword;
+  }
+  else {
+    alert("Please pick yes or no!")
+    return lCaseCriteria ();
+};
+  
+function numCriteria() {
+  var numbers = window.prompt("Would you like to include numbers in your new password? (type yes or no)");
+  if (numbers === 'yes'){
+    alert("Gotta love those numbers!");
+    newPassword = newPassword.concat(num);
+    return newPassword;
+  }
+  if (numbers === 'no'){
+    alert("Numbers aint for everyone!");
+    return newPassword;
+  }
+  else {
+    alert("please select an option!")
+    return numCriteria ();
+};
 
 
 
