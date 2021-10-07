@@ -3,6 +3,12 @@
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
+var newPassword = '';
+var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var lower = 'abcdefghijklmnopqurstuvwxyz';
+var num = '1234567890';
+var symbols = '~`! @#$%^&*()_-+={[}]|\:;<,>.?/'
+
 var generateBtn = document.querySelector("#generate");
 
 //function generatePassword(){}
@@ -23,7 +29,21 @@ function lengthCriteria() {
   }
 };
 
-function 
+function uCaseCriteria() {
+  var upperCase = window.prompt("Would you like uppercase letters in your password? (type yes or no)");
+  if (upperCase === 'yes'){
+    alert("gotcha!");
+    newPassword = newPassword.concat(upper);
+    return newPassword;
+  }
+  if (upperCase === 'no'){
+    alert("We wont add that in there!");
+    return newPassword;
+  }
+  else {
+    alert("please choose an option!")
+    return uCaseCriteria ();
+};
 
 
 
