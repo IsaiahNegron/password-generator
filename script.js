@@ -2,9 +2,10 @@
 
 var chosenCharacters = '';
 var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var lower = 'abcdefghijklmnopqurstuvwxyz';
+var lower = 'abcdefghijklmnopqrstuvwxyz';
 var num = '1234567890';
 var symbols = '~`! @#$%^&*()_-+={[}]|\:;<,>.?/'
+var passLength = '';
 
 var generateBtn = document.querySelector("#generate");
 
@@ -20,7 +21,7 @@ function lengthCriteria() {
   }
   else {
     alert("You selected " + passwordLength +" characters!");
-    return passwordLength;
+    return passLength;
   }
 };
 
@@ -103,6 +104,8 @@ function generatePassword() {
   numCriteria();
   symbCriteria();
 
+  console.log(chosenCharacters);
+
   //check to make sure selections were made and were not left blank
   if (chosenCharacters = ''){
     alert("Bro! Do it right the first time and we wouldn't have this problem!")
@@ -111,6 +114,7 @@ function generatePassword() {
 
   //run the loop through the password to create a unique password for the user
   var newPassword = '';
+  //var passLength = lengthCriteria();
   for (var i = 0; i < chosenCharacters.length; i++){
     newPassword = newPassword + chosenCharacters.charAt(Math.floor(Math.random() * chosenCharacters.length));
   }
