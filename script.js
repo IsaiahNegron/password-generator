@@ -1,14 +1,12 @@
 // Assignment code here
 
-var newPassword = '';
+var chosenCharacters = '';
 var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lower = 'abcdefghijklmnopqurstuvwxyz';
 var num = '1234567890';
 var symbols = '~`! @#$%^&*()_-+={[}]|\:;<,>.?/'
 
 var generateBtn = document.querySelector("#generate");
-
-//function generatePassword(){}
 
 function lengthCriteria() {
   var passwordLength = window.prompt("How long do you want your password to be? (must be 8-128 characters");
@@ -30,12 +28,12 @@ function uCaseCriteria() {
   var upperCase = window.prompt("Would you like uppercase letters in your password? (type yes or no)");
   if (upperCase === 'yes'){
     alert("gotcha!");
-    newPassword = newPassword.concat(upper);
-    return newPassword;
+    chosenCharacters = chosenCharacters.concat(upper);
+    return chosenCharacters;
   }
   if (upperCase === 'no'){
     alert("We wont add that in there!");
-    return newPassword;
+    return chosenCharacters;
   }
   else {
     alert("please choose an option!")
@@ -44,15 +42,15 @@ function uCaseCriteria() {
 };
   
 function lCaseCriteria() {
-  var lowerCase = window.prompt("Would you like uppercase letters in your password? (type yes or no)");
+  var lowerCase = window.prompt("Would you like lowercase letters in your password? (type yes or no)");
   if (lowerCase === 'yes'){
     alert("I'll add it in!");
-    newPassword = newPassword.concat(lower);
-    return newPassword;
+    chosenCharacters = chosenCharacters.concat(lower);
+    return chosenCharacters;
   }
   if (lowerCase === 'no'){
     alert("Sure thing!");
-    return newPassword;
+    return chosenCharacters;
   }
   else {
     alert("Please pick yes or no!")
@@ -64,12 +62,12 @@ function numCriteria() {
   var numbers = window.prompt("Would you like to include numbers in your new password? (type yes or no)");
   if (numbers === 'yes'){
     alert("Gotta love those numbers!");
-    newPassword = newPassword.concat(num);
-    return newPassword;
+    chosenCharacters = chosenCharacters.concat(num);
+    return chosenCharacters;
   }
   if (numbers === 'no'){
     alert("Numbers aint for everyone!");
-    return newPassword;
+    return chosenCharacters;
   }
   else {
     alert("please select an option!")
@@ -81,12 +79,12 @@ function symbCriteria() {
   var symbSelect = window.prompt("Shall I add symbols to your new password? (type yes or no)");
   if (symbSelect === 'yes'){
     alert("I'll add it in!");
-    newPassword = newPassword.concat(symbols);
-    return newPassword;
+    chosenCharacters = chosenCharacters.concat(symbols);
+    return chosenCharacters;
   }
   if (symbSelect === 'no'){
     alert("Copy That, Over and Out!");
-    return newPassword;
+    return chosenCharacters;
   }
   else {
     alert("Come on! Its a yes or no question!")
@@ -94,11 +92,31 @@ function symbCriteria() {
   }
 };
 
+function generatePassword() {
 
+  chosenCharacters = '';
 
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
+//runs the prompt functions
+  lengthCriteria();
+  uCaseCriteria();
+  lCaseCriteria();
+  numCriteria();
+  symbCriteria();
+
+  //check to make sure selections were made and were not left blank
+  if (chosenCharacters = ''){
+    alert("Bro! Do it right the first time and we wouldn't have this problem!")
+    return generatePassword
+  }
+
+  //run the loop through the password to create a unique password for the user
+  var newPassword = '';
+  for (var i = 0; i < chosenCharacters.length; i++){
+    newPassword = newPassword + chosenCharacters.charAt(Math.floor(Math.random() * chosenCharacters.length));
+  }
+  console.log(newPassword);
+  return newPassword;
+};
 
 
 // Write password to the #password input
