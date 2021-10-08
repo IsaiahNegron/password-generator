@@ -1,16 +1,39 @@
-# Password Generator Starter Code
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+# Password Generator
+
+  ![badge](https://img.shields.io/badge/license-MIT-important)
+
+  ## Description
+  I was tasked to create a unique password generator using javascript. Though the starter code was given to me, I had to use for loops and functions to make all of this happen!
+
+  ## Table of Contents
+  - [Description](#Description)
+  - [Installation Instructions](#Installation)
+  - [Usage](#Usage)
+  - [Contributions](#Contributions)
+  - [Testing](#Tests)
+  - [License](#License)
+  - [Github](#Github)
+  - [Contact](#Contact)
+
+  ## Installation Instructions
+  N/A
+
+  ## Usage
+  This application will be used to created a unique password for users who need stronger passwords for their own use.
+
+  ## Contributions
+  KU Full-Stack Bootcamp, peers, tutors
+
+  ## Testing
+  Launched it on github pages to test it!
+
+  ## License
+  ![badge](https://img.shields.io/badge/license-MIT-important)
+  <br>
+  Permission to use this application is granted under the MIT License. <https://opensource.org/licenses/MIT>
+
+  ## Github Username
+  Lets Connect: Isaiah A Negron
+
+  ## Contact
+  If you have any questions feel free to contact me at <a href='mailto:isaiahanegron@gmail.com'>isaiahanegron@gmail.com</a>
