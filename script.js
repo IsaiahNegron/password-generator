@@ -106,9 +106,9 @@ function generatePassword() {
   console.log(chosenCharacters);
 
   //check to make sure selections were made and were not left blank
-  if (chosenCharacters = ''){
-    alert("Bro! Do it right the first time and we wouldn't have this problem!")
-    return generatePassword
+  if (!chosenCharacters){
+    alert("Bro! Do it right the first time and we wouldn't have this problem!");
+    return generatePassword();
   }
 
   //run the loop through the password to create a unique password for the user
