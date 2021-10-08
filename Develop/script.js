@@ -3,6 +3,11 @@
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
+var newPassword = '';
+var numbers = '1234567890';
+var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var symbols = '~`! @#$%^&*()_-+={[}]|\:;<,>.?/'
+var lowerCase = 'abcdefghijklmnopqrstuvwxyz'
 var generateBtn = document.querySelector("#generate");
 
 //function generatePassword(){}
@@ -23,7 +28,9 @@ function lengthCriteria() {
   }
 };
 
-function 
+function symbolCriteria() {
+  symbols = 
+}
 
 
 
