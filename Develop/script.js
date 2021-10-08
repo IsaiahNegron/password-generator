@@ -1,13 +1,11 @@
 // Assignment code here
 
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
 var newPassword = '';
-var numbers = '1234567890';
-var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var lower = 'abcdefghijklmnopqurstuvwxyz';
+var num = '1234567890';
 var symbols = '~`! @#$%^&*()_-+={[}]|\:;<,>.?/'
-var lowerCase = 'abcdefghijklmnopqrstuvwxyz'
+
 var generateBtn = document.querySelector("#generate");
 
 //function generatePassword(){}
@@ -28,19 +26,75 @@ function lengthCriteria() {
   }
 };
 
-function symbolCriteria() {
-  symbols = 
-}
+function uCaseCriteria() {
+  var upperCase = window.prompt("Would you like uppercase letters in your password? (type yes or no)");
+  if (upperCase === 'yes'){
+    alert("gotcha!");
+    newPassword = newPassword.concat(upper);
+    return newPassword;
+  }
+  if (upperCase === 'no'){
+    alert("We wont add that in there!");
+    return newPassword;
+  }
+  else {
+    alert("please choose an option!")
+    return uCaseCriteria ();
+  }
+};
+  
+function lCaseCriteria() {
+  var lowerCase = window.prompt("Would you like uppercase letters in your password? (type yes or no)");
+  if (lowerCase === 'yes'){
+    alert("I'll add it in!");
+    newPassword = newPassword.concat(lower);
+    return newPassword;
+  }
+  if (lowerCase === 'no'){
+    alert("Sure thing!");
+    return newPassword;
+  }
+  else {
+    alert("Please pick yes or no!")
+    return lCaseCriteria ();
+  }
+};
+  
+function numCriteria() {
+  var numbers = window.prompt("Would you like to include numbers in your new password? (type yes or no)");
+  if (numbers === 'yes'){
+    alert("Gotta love those numbers!");
+    newPassword = newPassword.concat(num);
+    return newPassword;
+  }
+  if (numbers === 'no'){
+    alert("Numbers aint for everyone!");
+    return newPassword;
+  }
+  else {
+    alert("please select an option!")
+    return numCriteria ();
+  }
+};
+  
+function symbCriteria() {
+  var symbSelect = window.prompt("Shall I add symbols to your new password? (type yes or no)");
+  if (symbSelect === 'yes'){
+    alert("I'll add it in!");
+    newPassword = newPassword.concat(symbols);
+    return newPassword;
+  }
+  if (symbSelect === 'no'){
+    alert("Copy That, Over and Out!");
+    return newPassword;
+  }
+  else {
+    alert("Come on! Its a yes or no question!")
+    return symbCriteria ();
+  }
+};
 
 
-
-
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
 
 // THEN a password is generated that matches the selected criteria
 // WHEN the password is generated
